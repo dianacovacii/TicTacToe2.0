@@ -15,7 +15,7 @@ function checkWinner(){
     for (const combo of winningCombos){
         //try all winning combination and check if either player has attained it
         const [a, b, c] = combo;
-        if (board[a] === board[b] && board[a] === board[c] && board[a] != ''){
+        if (board[a] === board[b] && board[a] === board[c] && board[a] !== ''){
             return board[a]
         }
     }
@@ -40,7 +40,7 @@ function minimax(board, depth, isMaximizing){
         //ai turn, maximizing score
         let best = -Infinity;
         for (let i=0; i<9; i++){
-            if (board[i] == ''){
+            if (board[i] === ''){
                 board[i] = ai;
                 let score = minimax(board, depth+1, false); 
                 board[i] = ''; 
@@ -53,7 +53,7 @@ function minimax(board, depth, isMaximizing){
         //human turn, minimizing score
         let best = Infinity; 
         for (let i=0; i<9; i++){
-            if (board[i] == ''){
+            if (board[i] === ''){
                 board[i] = human; 
                 let score = minimax(board, depth+1, true)
                 board[i] = ''; 
@@ -87,7 +87,7 @@ function handleClick(event){
     const cellIndex = Array.from(cells).indexOf(event.target); 
     if (firstMove){ 
         firstMove = false; 
-        messageDiv.textContent = '';
+        messageDiv.textContent = "Play Tic-Tac-Toe!";
     }
     if (board[cellIndex] === '' && active && currentPlayer === human){
         board[cellIndex] = human; 
@@ -98,7 +98,7 @@ function handleClick(event){
         }
         else{ 
             currentPlayer = ai; 
-            setTimeout(() => {bestMove(); const winner = checkWinner(); if (winner){endGame(winner);}}, 500);
+            setTimeout(() => {bestMove(); const winner = checkWinner(); if (winner){endGame(winner);}}, 300);
         }
     }
 }
@@ -124,4 +124,3 @@ function resetGame(){
     cells.forEach(cell => (cell.textContent = ''));
     messageDiv.textContent = "Game Reset.";
 }
-
