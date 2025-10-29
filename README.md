@@ -12,20 +12,20 @@ Additional improvements from the original hackathon project include:
 
 ---
 
-# Features: 
+### Features: 
 - Player vs. Computer in the browser
 - AI uses Minimax algorithm for unbeatable strategy
 - Messages displayed for end-of-game results
 - Reset button to restart and replay the game
 - Interactive, responsive UI with HTML/CSS
 
-# How to play: 
+### How to play: 
 - Click on a square to place your O.
 - The computer responds with X.
 - The game shows messgae you win, lose, or tie.
 - Click Reset Game to start a new game anytime.
 
-# Installation: 
+### Installation: 
 This is a web-based game, so no Python or extra dependinces are needed. 
 
 1. Clone the repository: 
@@ -38,6 +38,6 @@ This is a web-based game, so no Python or extra dependinces are needed.
 2. Open `index.html` in your browser
 
 
-# License
+### License
 This project is licensed under the [MIT License](LICENSE).
 
